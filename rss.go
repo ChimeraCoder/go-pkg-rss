@@ -159,7 +159,7 @@ func (this *Feed) readRss2(doc *xmlx.Document) (err error) {
             i.Author.Name = item.S(ns, "creator")
 
 			i.Comments = item.S(ns, "comments")
-			i.Guid = item.S(ns, "guid")
+			*i.Guid = item.S(ns, "guid")
 			i.PubDate = item.S(ns, "pubDate")
 
 			tl = item.SelectNodes(ns, "category")
